@@ -1,36 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_numbers.c                                 :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lscheupl <lscheupl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/14 13:59:04 by lscheupl          #+#    #+#             */
-/*   Updated: 2024/05/14 14:21:55 by lscheupl         ###   ########.fr       */
+/*   Created: 2024/05/14 16:40:32 by lscheupl          #+#    #+#             */
+/*   Updated: 2024/05/14 17:14:40 by lscheupl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
-void	ft_putchar(char c)
+int	ft_sqrt(int nb)
 {
-	write(1, &c, 1);
-}
+	int	value;
 
-void	ft_print_numbers(void)
-{
-	int	i;
-
-	i = 0;
-	while (i <= 9)
+	value = 1;
+	if (nb <= 0)
+		return (0);
+	if (nb == 1)
+		return (1);
+	while (value * value <= nb)
 	{
-		ft_putchar('0' + i);
-		i++;
+		if (value * value == nb)
+			return (value);
+		value++;
 	}
+	return (0);
 }
-
 int	main(void)
 {
-	ft_print_numbers();
+	printf("value is %d", ft_sqrt(878));
 	return (0);
 }

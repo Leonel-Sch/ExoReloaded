@@ -1,36 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_numbers.c                                 :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lscheupl <lscheupl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/14 13:59:04 by lscheupl          #+#    #+#             */
-/*   Updated: 2024/05/14 14:21:55 by lscheupl         ###   ########.fr       */
+/*   Created: 2024/05/14 15:32:46 by lscheupl          #+#    #+#             */
+/*   Updated: 2024/05/14 15:38:21 by lscheupl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include <unistd.h>
 
-void	ft_putchar(char c)
+void	ft_swap(int *a, int *b)
 {
-	write(1, &c, 1);
-}
+	int	swap;
 
-void	ft_print_numbers(void)
-{
-	int	i;
-
-	i = 0;
-	while (i <= 9)
-	{
-		ft_putchar('0' + i);
-		i++;
-	}
+	swap = *a;
+	*a = *b;
+	*b = swap;
 }
 
 int	main(void)
 {
-	ft_print_numbers();
+	int a;
+	int b;
+	a = 0;
+	b = 1000;
+	printf("les nombre sont %d puis %d\n", a, b);
+	ft_swap(&a, &b);
+	printf("les nombre sont %d puis %d", a, b);
 	return (0);
 }

@@ -1,36 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_numbers.c                                 :+:      :+:    :+:   */
+/*   ft_ft.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lscheupl <lscheupl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/14 13:59:04 by lscheupl          #+#    #+#             */
-/*   Updated: 2024/05/14 14:21:55 by lscheupl         ###   ########.fr       */
+/*   Created: 2024/05/14 14:33:24 by lscheupl          #+#    #+#             */
+/*   Updated: 2024/05/14 15:32:41 by lscheupl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include <unistd.h>
 
-void	ft_putchar(char c)
+void	ft_ft(int *nbr)
 {
-	write(1, &c, 1);
-}
-
-void	ft_print_numbers(void)
-{
-	int	i;
-
-	i = 0;
-	while (i <= 9)
-	{
-		ft_putchar('0' + i);
-		i++;
-	}
+	*nbr = 42;
 }
 
 int	main(void)
 {
-	ft_print_numbers();
+	int nbr;
+	nbr = 0;
+	ft_ft(&nbr);
+	printf("le nombre est %d", nbr);
 	return (0);
 }

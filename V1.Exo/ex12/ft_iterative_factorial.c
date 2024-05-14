@@ -1,36 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_numbers.c                                 :+:      :+:    :+:   */
+/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lscheupl <lscheupl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/14 13:59:04 by lscheupl          #+#    #+#             */
-/*   Updated: 2024/05/14 14:21:55 by lscheupl         ###   ########.fr       */
+/*   Created: 2024/05/14 15:45:09 by lscheupl          #+#    #+#             */
+/*   Updated: 2024/05/14 16:01:50 by lscheupl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-void	ft_putchar(char c)
+int	ft_iterative_factorial(int nb)
 {
-	write(1, &c, 1);
-}
+	int	cache;
 
-void	ft_print_numbers(void)
-{
-	int	i;
-
-	i = 0;
-	while (i <= 9)
+	cache = nb - 1;
+	if (nb <= 0)
+		return (0);
+	while (cache >= 1)
 	{
-		ft_putchar('0' + i);
-		i++;
+		nb = nb * cache;
+		cache--;
 	}
+	return (nb);
 }
-
-int	main(void)
+int	main(int argc, char **argv)
 {
-	ft_print_numbers();
+	printf("le resultat est %d", ft_iterative_factorial(-1));
 	return (0);
 }
